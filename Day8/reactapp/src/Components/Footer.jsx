@@ -8,7 +8,9 @@ class Footer extends Component {
       padding: '20px',
       textAlign: 'center',
       boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)',
-      backgroundColor: '#f9f9f9'
+      backgroundColor: '#f9f9f9',
+      width: '300px', // Adjust the width as needed
+      margin: '0 auto', // Center the card horizontally
     };
 
     return (
