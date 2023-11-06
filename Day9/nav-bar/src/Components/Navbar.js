@@ -43,11 +43,6 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="btn btn-primary mx-1" to="/Signin">
-                  Signin
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
