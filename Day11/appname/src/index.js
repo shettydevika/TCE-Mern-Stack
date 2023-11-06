@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// const express = require('express')
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// var http = require('http')
+// const app= express()
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// http.createServer(function(req,res){
+//     res.end("Hello World")
+// }).listen(3000)
+
+// console.log("server is running...")
+
+
+const express =require('express')
+const app=express()
+const mongoose=require('mongoose')
+const route=require('./routes/route')
+app.use(express.json());
+const PORT=8080
+mongoose.connect('mongodb+srv://sinchram03:sinchana@cluster0.uwpwbhp.mongodb.net/MyDb') 
+.then(()=>{console.log("Database connected")})
+.catch((error)=>{console.log(error)})
+app.use('/',route);
+app.listen( PORT ,()=>{
+    console.log(`Server is running ${PORT}`);
+});
